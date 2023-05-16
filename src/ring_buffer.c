@@ -57,9 +57,15 @@ size_t ring_buffer_peek(ring_buffer_t *ctx, uint8_t *data, size_t len) {
 }
 
 size_t ring_buffer_read(ring_buffer_t *ctx, uint8_t *data, size_t len) {
-  size_t res = ring_buffer_peek(ctx, data, len);
-  ctx->length -= res;
-  return res;
+  if (data != NULL) {
+    size_t res = ring_buffer_peek(ctx, data, len);
+    ctx->length -= res;
+    return res;
+  } else {
+    size_t res = MIN(len, ctx->length);
+    ctx->length -= res;
+    return res;
+  }
 }
 
 void ring_buffer_clear(ring_buffer_t *ctx) {
