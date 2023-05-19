@@ -11,6 +11,7 @@ add_executable(midi-rate-conv)
 target_sources(midi-rate-conv PUBLIC
         ${CMAKE_CURRENT_LIST_DIR}/src/main.c
         ${CMAKE_CURRENT_LIST_DIR}/src/ring_buffer.c
+        ${CMAKE_CURRENT_LIST_DIR}/src/sc55_emu.c
         ${CMAKE_CURRENT_LIST_DIR}/src/uart_midi.c
         ${CMAKE_CURRENT_LIST_DIR}/src/usb_descriptors.c
         ${CMAKE_CURRENT_LIST_DIR}/src/usb_midi.c

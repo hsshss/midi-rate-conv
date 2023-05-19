@@ -9,7 +9,7 @@ void ring_buffer_init(ring_buffer_t *ctx, uint8_t *buffer, size_t size) {
   ctx->buffer = buffer;
 }
 
-void ring_buffer_write(ring_buffer_t *ctx, uint8_t *data, size_t len) {
+void ring_buffer_write(ring_buffer_t *ctx, const uint8_t *data, size_t len) {
   if (len == 0) {
     return;
   }

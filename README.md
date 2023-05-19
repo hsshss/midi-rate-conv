@@ -1,8 +1,32 @@
 # Overview
 
-Converts RS-MIDI signals (38400bps) to MIDI signals (31250bps).
+Converts RS-MIDI signals (38400bps) to MIDI signals (31250bps).  
+Supports SC-55 emulation for SC-55mkII or later.
 
-# Schematics
+## Signal flows
+
+- RS-MIDI IN -> MIDI OUT
+- RS-MIDI IN/OUT <-> USB-MIDI IN/OUT
+- USB-MIDI OUT -> MIDI OUT (Loop back RS-MIDI TX and RX)
+
+## SC-55 emulation
+
+- Capital Tone Fallback
+- TVF Cutoff Freq Limitation
+- Force SC-55 map
+
+# Hardware
+
+## Schematics
+
+![schematic](images/schematic.png)
+
+## Jumpers
+
+- SC55_EN
+    - Enable SC-55 emulation immediately
+
+## Details
 
 https://oshwlab.com/hsshss/midi-rate-conv
 
